@@ -39,11 +39,12 @@ class GameLogic:
     def main(self):
         ch = 'O'
         while not self.game_over():
-            ch = self.next_move(ch)
-            self.ui.draw_board()
             if len(self.played_positions) == 9:
                 print("It's a draw!")
                 break
+            ch = self.next_move(ch)
+            self.ui.draw_board()
+
         if self.game_over():
             index = self.char.index(ch)
             ch = self.char[(index+1)%2]
