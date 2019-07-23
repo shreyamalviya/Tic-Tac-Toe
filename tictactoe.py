@@ -1,9 +1,13 @@
 class GameUI:
     def __init__(self):
-        self.board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
+        self.board = [["1", "2", "3"], ["4", "5", "6"], ["7", "8", "9"]]
         self.row = "\t     |     |     "
         self.row_divider = "\t_____|_____|_____"
+        print("\n\nLet's play Tic-Tac-Toe!")
+        print("\t* To quit the game, press `ctrl d`.")
+        print("\t* Refer to the following figure for positions.\n")
         self.draw_board()
+        self.board = [[" ", " ", " "], [" ", " ", " "], [" ", " ", " "]]
         GameLogic(self)
 
     def draw_board(self):
