@@ -44,7 +44,7 @@ class GameLogic:
             if len(self.played_positions) == 9:
                 print("It's a draw!")
                 break
-        if self.game_over():            
+        if self.game_over():
             index = self.char.index(ch)
             ch = self.char[(index+1)%2]
             print("Congratulations, {}! You win.".format(ch))
@@ -54,11 +54,12 @@ class GameLogic:
         pos = -1
         while pos == -1:
             try:
-                pos = int(input())
+                pos = input()
+                pos = int(pos)
+            except EOFError:
+                quit()
             except ValueError:
                 continue
-            finally:
-                break            
         if self.check_valid(pos):
             row = (pos-1)//3
             col = pos-1-(3*row)
