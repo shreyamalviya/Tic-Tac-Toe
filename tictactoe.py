@@ -74,16 +74,16 @@ class GameLogic:
         
     def game_over(self):
         for row in range(0, 3):
-            if self.ui.board[row][0] == self.ui.board[row][1] == self.ui.board[row][2] or\
-               self.ui.board[0][row] == self.ui.board[1][row] == self.ui.board[2][row]:
+            if (self.ui.board[row][0] == self.ui.board[row][1] == self.ui.board[row][2]) or\
+               (self.ui.board[0][row] == self.ui.board[1][row] == self.ui.board[2][row]):
                 if self.ui.board[row][0] != " " and\
                    self.ui.board[0][row] != " ":
                     return True
-        if self.ui.board[0][0] == self.ui.board[1][1] == self.ui.board[2][2] or\
-           self.ui.board[0][2] == self.ui.board[1][1] == self.ui.board[2][0]:
-            if self.ui.board[1][1] != " " and\
-               (self.ui.board[0][2] != " " and self.ui.board[2][0] != " ") or\
-               (self.ui.board[0][0] != " " and self.ui.board[2][2] != " "):
+        if (self.ui.board[0][0] == self.ui.board[1][1] == self.ui.board[2][2]) or\
+           (self.ui.board[0][2] == self.ui.board[1][1] == self.ui.board[2][0]):
+            if (self.ui.board[1][1] != " ") and\
+               ((self.ui.board[0][2] != " " and self.ui.board[2][0] != " ") or\
+               (self.ui.board[0][0] != " " and self.ui.board[2][2] != " ")):
                 return True
         return False
 
