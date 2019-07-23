@@ -1,2 +1,7 @@
 # Tic-Tac-Toe
-a simple 2-player tic-tac-toe game
+A simple 2-player Tic-Tac-Toe game
+
+Steps to play:
+* Clone repositiory
+* Navigate to folder
+* Run `tictactoe.py`
