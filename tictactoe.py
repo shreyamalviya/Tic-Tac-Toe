@@ -40,7 +40,7 @@ class GameLogic:
         ch = 'O'
         while not self.game_over():
             if len(self.played_positions) == 9:
-                print("It's a draw!")
+                print("\nIt's a draw!")
                 break
             ch = self.next_move(ch)
             self.ui.draw_board()
@@ -48,10 +48,10 @@ class GameLogic:
         if self.game_over():
             index = self.char.index(ch)
             ch = self.char[(index+1)%2]
-            print("Congratulations, {}! You win.".format(ch))
+            print("\nCongratulations, {}! You win.".format(ch))
 
     def next_move(self, char):
-        print("[{}] Enter position: ".format(char))
+        print("\n[{}] Enter position: ".format(char))
         pos = -1
         while pos == -1:
             try:
