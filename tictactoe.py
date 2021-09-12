@@ -13,7 +13,7 @@ class GameUI:
     def draw_board(self):
         for row in range(9):
             if row == 8:
-                    print(self.row)
+                print(self.row)
             elif row in [2, 5]:
                 print(self.row_divider)
             elif row in [1, 4, 7]:
@@ -47,7 +47,7 @@ class GameLogic:
 
         if self.game_over():
             index = self.char.index(ch)
-            ch = self.char[(index+1)%2]
+            ch = self.char[(index+1) % 2]
             print("\nCongratulations, {}! You win.".format(ch))
 
     def next_move(self, char):
@@ -67,12 +67,12 @@ class GameLogic:
             self.ui.board[row][col] = char
             self.played_positions.append(pos)
             index = self.char.index(char)
-            return self.char[(index+1)%2]
+            return self.char[(index+1) % 2]
         else:
             print("Invalid input. Try again.")
             index = self.char.index(char)
             return char
-        
+
     def game_over(self):
         for row in range(0, 3):
             if (self.ui.board[row][0] == self.ui.board[row][1] == self.ui.board[row][2]) or\
@@ -83,7 +83,7 @@ class GameLogic:
         if (self.ui.board[0][0] == self.ui.board[1][1] == self.ui.board[2][2]) or\
            (self.ui.board[0][2] == self.ui.board[1][1] == self.ui.board[2][0]):
             if (self.ui.board[1][1] != " ") and\
-               ((self.ui.board[0][2] != " " and self.ui.board[2][0] != " ") or\
+               ((self.ui.board[0][2] != " " and self.ui.board[2][0] != " ") or
                (self.ui.board[0][0] != " " and self.ui.board[2][2] != " ")):
                 return True
         return False
@@ -99,5 +99,6 @@ class GameLogic:
 def main():
     GameUI()
 
+
 if __name__ == "__main__":
-	main()
+    main()
